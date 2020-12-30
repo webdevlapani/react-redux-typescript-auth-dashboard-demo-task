@@ -35,8 +35,8 @@ const Routes: FC = () => (
             <SideBar />
             <Layout className="content-layout">
               <Content className="site-layout-background content-layout-section">
-                <PrivateRoute exact path="/" component={Dashboard} />
                 <PrivateRoute exact path="/settings" component={Settings} />
+                <PrivateRoute exact path="/*" component={Dashboard} />
               </Content>
             </Layout>
           </Layout>
