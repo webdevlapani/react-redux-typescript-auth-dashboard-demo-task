@@ -14,7 +14,7 @@ const TopBar = () => {
   const history = useHistory();
   const logout = () => {
     localStorage.removeItem('accessToken');
-    history.push('/');
+    history.push('/login');
   };
 
   return (

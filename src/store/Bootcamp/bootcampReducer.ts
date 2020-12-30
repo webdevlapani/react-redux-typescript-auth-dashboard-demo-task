@@ -32,7 +32,6 @@ const bootCampReducer = (state = initialState, action: IAction): IBootcampState 
         error: '',
       };
     case GET_BOOTCAMP_REQUEST_SUCCESS:
-      debugger;
       const bootCamps = action.payload.map((bootcamp: IBootcamp, index: number) => {
         return {
           key: index,

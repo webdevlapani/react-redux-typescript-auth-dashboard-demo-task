@@ -20,6 +20,24 @@ const { Content } = Layout;
  */
 export const history = createBrowserHistory();
 
+const DashBoardRoutes = () => {
+  return <Layout>
+    <TopBar />
+    <Layout>
+      <SideBar />
+      <Layout className="content-layout">
+        <Content className="site-layout-background content-layout-section">
+          <Switch>
+            <PrivateRoute exact path="/dashboard/settings" component={Settings} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute component={() => <div> 404 Page not found </div>} />
+          </Switch>
+        </Content>
+      </Layout>
+    </Layout>
+  </Layout>
+}
+
 /**
  * Register applications all routes here
  * @constructor
@@ -29,18 +47,8 @@ const Routes: FC = () => (
     <Router history={history}>
       <Switch>
         <LoginRoute exact path="/login" component={Login} />
-        <Layout>
-          <TopBar />
-          <Layout>
-            <SideBar />
-            <Layout className="content-layout">
-              <Content className="site-layout-background content-layout-section">
-                <PrivateRoute exact path="/settings" component={Settings} />
-                <PrivateRoute exact path="/*" component={Dashboard} />
-              </Content>
-            </Layout>
-          </Layout>
-        </Layout>
+        <PrivateRoute exact path="/dashboard*" component={DashBoardRoutes} />
+        <PrivateRoute component={() => <div> 404 Page not found </div>} />
       </Switch>
     </Router>
   </Provider>

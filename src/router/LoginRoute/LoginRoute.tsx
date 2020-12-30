@@ -13,7 +13,7 @@ const LoginRoute: FC<IExtendedRouteProps> = ({ component: Component, ...rest }) 
   <Route
     {...rest}
     render={(props: RouteComponentProps) =>
-      !isLogin() ? <Component {...props} /> : <Redirect to="/" />
+      !isLogin() ? <Component {...props} /> : <Redirect to="/dashboard" />
     }
   />
 );

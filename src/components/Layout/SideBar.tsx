@@ -10,13 +10,13 @@ const { Sider } = Layout;
 const sidebar = [
   {
     key: 1,
-    path: '/',
+    path: '/dashboard',
     value: 'Dashboard',
     icon: <UserOutlined />,
   },
   {
     key: 2,
-    path: '/settings',
+    path: '/dashboard/settings',
     value: 'Settings',
     icon: <StopOutlined />,
   },

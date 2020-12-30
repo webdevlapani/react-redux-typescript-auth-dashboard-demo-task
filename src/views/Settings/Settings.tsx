@@ -52,7 +52,7 @@ const Settings: FC = () => {
         </Col>
 
         <Col span={24}>
-          <Table dataSource={bootCamps.bootCamps} columns={columns} />;
+          <Table dataSource={bootCamps.bootCamps} columns={columns} />
         </Col>
       </Row>
     </>

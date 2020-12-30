@@ -25,7 +25,7 @@ const Login = () => {
   const history = useHistory();
 
   const onFinish = (values) => {
-    dispatch(login(values, () => history.push('/')));
+    dispatch(login(values, () => history.push('/dashboard')));
   };
 
   // getting auth data from redux
